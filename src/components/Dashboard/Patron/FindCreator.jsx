@@ -1,4 +1,14 @@
-import { Box,chakra , Button, Center, Divider, Flex, Heading, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  Divider,
+  Flex,
+  Heading,
+  Input,
+  InputGroup,
+  InputLeftElement,
+} from "@chakra-ui/react";
 import React from "react";
 import { BsSearch } from "react-icons/bs";
 
@@ -20,17 +30,16 @@ function FindCreator() {
         </Box>
         <Box>
           <Center>
-
-          <Heading size={"md"} >Popular searches</Heading>
+            <Heading size={"md"}>Popular searches</Heading>
           </Center>
-          
+
           <Flex p={"30px"} justify={"space-around"}>
-            <Button size={"sm"} >Art</Button>
-            <Button size={"sm"} >Music</Button>
-            <Button size={"sm"} >Podcast</Button>
-            <Button size={"sm"} >Games</Button>
-            <Button size={"sm"} >Yoga</Button>
-            <Button size={"sm"} >Sailing</Button>
+            <Button size={"sm"}>Art</Button>
+            <Button size={"sm"}>Music</Button>
+            <Button size={"sm"}>Podcast</Button>
+            <Button size={"sm"}>Games</Button>
+            <Button size={"sm"}>Yoga</Button>
+            <Button size={"sm"}>Sailing</Button>
           </Flex>
         </Box>
       </Box>

@@ -2,12 +2,8 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-  PopoverHeader,
   PopoverBody,
   PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,
   Box,
   Flex,
   Avatar,
@@ -21,7 +17,6 @@ import { fetchUserData } from "../../redux/userData/action";
 import { NavItem } from "./Sidebar";
 
 function SidebarPopoverFooter({ LinkItem }) {
-  
   const { token } = useSelector((state) => state.auth);
   const { userData } = useSelector((state) => state.userData);
   const dispatch = useDispatch();
@@ -43,7 +38,8 @@ function SidebarPopoverFooter({ LinkItem }) {
             pos={"fixed"}
             p="13px 10px"
             cursor={"pointer"}
-            bottom="0">
+            bottom="0"
+          >
             <Flex>
               <Avatar
                 size={"sm"}
@@ -65,9 +61,9 @@ function SidebarPopoverFooter({ LinkItem }) {
                     : userData?.patron_mode?.patronmode_name}
                 </Text>
                 <Text fontSize={"sm"} mt="-1.5" color="gray">
-                  {LinkItem.name === "My page" ?
-                    userData?.creator_mode?.creatorType :
-                    "Patron"}
+                  {LinkItem.name === "My page"
+                    ? userData?.creator_mode?.creatorType
+                    : "Patron"}
                 </Text>
               </Box>
             </Flex>
@@ -81,13 +77,10 @@ function SidebarPopoverFooter({ LinkItem }) {
               <Box
                 onClick={() => n("/creatorhome")}
                 _hover={{ backgroundColor: "gray.100" }}
-                // borderWidth={1}
                 boxSize="border-box"
-                // width="15rem"
-                // backgroundColor={"white"}
-                // p="13px 10px"
                 cursor={"pointer"}
-                bottom="0">
+                bottom="0"
+              >
                 <Flex>
                   <Avatar
                     size={"sm"}
@@ -108,13 +101,10 @@ function SidebarPopoverFooter({ LinkItem }) {
               <Box
                 onClick={() => n("/patronhome")}
                 _hover={{ backgroundColor: "gray.100" }}
-                // borderWidth={1}
                 boxSize="border-box"
-                // width="15rem"
-                // backgroundColor={"white"}
-                // p="13px 10px"
                 cursor={"pointer"}
-                bottom="0">
+                bottom="0"
+              >
                 <Flex>
                   <Avatar
                     size={"sm"}
@@ -134,7 +124,13 @@ function SidebarPopoverFooter({ LinkItem }) {
           <PopoverFooter>
             <NavItem>Creator resources</NavItem>
             <NavItem>Help center & FAQ</NavItem>
-            <NavItem onClick={()=>{dispatch(handleLogOut());}} >Log out</NavItem>
+            <NavItem
+              onClick={() => {
+                dispatch(handleLogOut());
+              }}
+            >
+              Log out
+            </NavItem>
           </PopoverFooter>
         </PopoverContent>
       </Popover>

@@ -14,11 +14,9 @@ import {
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
   Td,
-  TableCaption,
   TableContainer,
 } from "@chakra-ui/react";
 import {
@@ -31,7 +29,6 @@ import {
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import React from "react";
 function Insights({ userData }) {
-  // console.log(userData);
   let today = new Date();
   let time =
     today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -70,7 +67,8 @@ function Insights({ userData }) {
                 <Flex
                   justifyContent={"space-between"}
                   margin={"30px 0"}
-                  gap={"10px"}>
+                  gap={"10px"}
+                >
                   <Menu>
                     <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
                       Past 30 days

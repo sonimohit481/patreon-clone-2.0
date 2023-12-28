@@ -1,34 +1,30 @@
 import React, { useEffect, useState } from "react";
-import { Avatar, Box, Button, Divider, Flex, Heading, Image, Input } from "@chakra-ui/react";
-import { Comments } from "./Comments";
-import "./feed.css"
-import { BsHeart, BsHeartFill, BsPin, BsThreeDots } from "react-icons/bs";
-import { FiEdit2, FiTrash, FiUpload } from "react-icons/fi";
+import {
+  Avatar,
+  Box,
+  Divider,
+  Flex,
+  Heading,
+  Image,
+  Input,
+} from "@chakra-ui/react";
+import "./feed.css";
+import { BsHeart, BsHeartFill, BsThreeDots } from "react-icons/bs";
+import { FiUpload } from "react-icons/fi";
 export const FeedCard = ({ post }) => {
   console.log(post, "postDaat");
-  const [likescount, setLikescount] = useState(0)
-  const [isLike, setIsLike] = useState(false)
-  // const posts = [post[0],post[1]]
-  // console.log(posts);
+  const [isLike, setIsLike] = useState(false);
   function ToggleLike() {
-    setIsLike(!isLike)
+    setIsLike(!isLike);
   }
-  useEffect(() => {
- 
-  
-  }, [])
-  
-const creatorName = post.creatorName, creatorPic = post.creatorPic;
-  // let today = new Date();
-// let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  useEffect(() => {}, []);
 
-  // const{type,title,desc,date, time, content_url,visibility,likes,tier}= post1[0]
-
+  const creatorName = post.creatorName,
+    creatorPic = post.creatorPic;
 
   return (
     <>
       {post.posts.map((p) => (
-        
         <div className="feedCard">
           <div>
             <div
@@ -36,7 +32,8 @@ const creatorName = post.creatorName, creatorPic = post.creatorPic;
                 display: "flex",
                 paddingBottom: "15px",
                 alignItem: "centre",
-              }}>
+              }}
+            >
               <Image
                 borderRadius="full"
                 boxSize="50px"
@@ -72,7 +69,8 @@ const creatorName = post.creatorName, creatorPic = post.creatorPic;
                   margin="10px"
                   mt="2"
                   gap={"40px"}
-                  alignItems="center">
+                  alignItems="center"
+                >
                   <Box onClick={ToggleLike}>
                     {isLike ? <BsHeartFill fill="red" /> : <BsHeart />}
                   </Box>

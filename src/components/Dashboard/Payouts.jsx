@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
+
 import {
   Alert,
   AlertDescription,
@@ -18,14 +18,7 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import {
-  Stat,
-  StatLabel,
-  StatNumber,
-  StatHelpText,
-  StatArrow,
-} from "@chakra-ui/react";
-import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { Stat, StatNumber, StatHelpText } from "@chakra-ui/react";
 
 function Payouts() {
   return (
@@ -47,7 +40,8 @@ function Payouts() {
                 borderRadius="lg"
                 overflow="hidden"
                 padding={"30px"}
-                margin="0px">
+                margin="0px"
+              >
                 <Flex>
                   <Stat>
                     {/* <StatLabel>Collected Fees</StatLabel> */}
@@ -74,33 +68,3 @@ function Payouts() {
   );
 }
 export default Payouts;
-
-function AlertCard() {
-  const {
-    isOpen: isVisible,
-    onClose,
-    onOpen,
-  } = useDisclosure({ defaultIsOpen: true });
-
-  return isVisible ? (
-    <Alert status="success">
-      <AlertIcon />
-      <Box>
-        <AlertTitle>Success!</AlertTitle>
-        <AlertDescription>
-          Your application has been received. We will review your application
-          and respond within the next 48 hours.
-        </AlertDescription>
-      </Box>
-      <CloseButton
-        alignSelf="flex-start"
-        position="relative"
-        right={-1}
-        top={-1}
-        onClick={onClose}
-      />
-    </Alert>
-  ) : (
-    <Button onClick={onOpen}>Show Alert</Button>
-  );
-}

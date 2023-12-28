@@ -1,27 +1,8 @@
-import {
-  border,
-  Button,
-  Checkbox,
-  Flex,
-  Heading,
-  Link,
-  Text,
-  Textarea,
-} from "@chakra-ui/react";
+import { Button, Flex, Textarea } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import {
-  List,
-  ListItem,
-  ListIcon,
-  OrderedList,
-  UnorderedList,
-  Input,
-  Radio,
-  RadioGroup,
-  Stack,
-} from "@chakra-ui/react";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { Input, Radio, RadioGroup, Stack } from "@chakra-ui/react";
+
 import "../edit/editPage.css";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { Switch } from "@chakra-ui/react";
@@ -29,8 +10,7 @@ import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import Sidebar from "../../../components/Dashboard/Sidebar";
-import { MdOutlineFeed } from "react-icons/md";
-import { BsCompass } from "react-icons/bs";
+
 import { FiHome, FiMail, FiSettings } from "react-icons/fi";
 import { IoPeopleOutline } from "react-icons/io5";
 import { CgInsights } from "react-icons/cg";
@@ -50,8 +30,7 @@ export const CreatePost = () => {
   const [imgurl, setImgurl] = useState("");
   const [title, setTitle] = useState("");
   const [caption, setCaption] = useState("");
-  const [tags, setTags] = useState("");
-  const [heading, setHeading] = useState("");
+
   const [value, setValue] = useState("1");
   const [length, setLength] = useState(0);
   const location = useLocation();
@@ -61,7 +40,6 @@ export const CreatePost = () => {
   console.log("Prop is:", type);
 
   const handlecreatepost = () => {
-
     const current = new Date();
     const payLoad = {
       type: type,
@@ -74,11 +52,10 @@ export const CreatePost = () => {
       likes: 0,
     };
     console.log("Data", data);
-    // let temp = data.creator_mode.posts;
+
     data.creator_mode.posts.push(payLoad);
     console.log("after patch:", data);
-    // temp.push(payLoad);
-    // console.log("data2",data);
+
     fetch(`https://patreon-data.herokuapp.com/users/${token}`, {
       method: "PATCH",
       body: JSON.stringify(data),
@@ -92,7 +69,9 @@ export const CreatePost = () => {
   };
   useEffect(() => {
     async function getData() {
-      let res = await fetch(`https://patreon-data.herokuapp.com/users/${token}`);
+      let res = await fetch(
+        `https://patreon-data.herokuapp.com/users/${token}`
+      );
       let data1 = await res.json();
       console.log("got from async:", data1.creator_mode.posts);
       setData(data1);
@@ -100,7 +79,6 @@ export const CreatePost = () => {
     getData();
   }, []);
   const { userData } = useSelector((state) => state.userData);
-
 
   return (
     <>
@@ -115,7 +93,8 @@ export const CreatePost = () => {
                 flexDirection: "row",
                 backgroundColor: "rgba(237,241,253,0.84)",
                 justifyContent: "space-around",
-              }}>
+              }}
+            >
               <div
                 style={{
                   width: "60%",
@@ -124,7 +103,8 @@ export const CreatePost = () => {
                   backgroundColor: "white",
                   borderRadius: "9px",
                   boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                }}>
+                }}
+              >
                 <div
                   style={{
                     fontWeight: "500",
@@ -133,13 +113,15 @@ export const CreatePost = () => {
                     margin: "auto",
                     marginTop: "5%",
                     marginBottom: "3%",
-                  }}>
+                  }}
+                >
                   Create {type} Post
                 </div>
                 <div style={{ width: "90%", margin: "auto", padding: "2%" }}>
                   {type === "image" ? (
                     <div
-                      style={{ border: "1px dashed grey", marginBottom: "3%" }}>
+                      style={{ border: "1px dashed grey", marginBottom: "3%" }}
+                    >
                       <div style={{ width: "10%", margin: "auto" }}>
                         <AiOutlineCloudUpload
                           style={{
@@ -159,7 +141,8 @@ export const CreatePost = () => {
                           display: "flex",
                           justifyContent: "center",
                           marginTop: "5%",
-                        }}>
+                        }}
+                      >
                         <Input
                           type="file"
                           accept="image"
@@ -168,7 +151,6 @@ export const CreatePost = () => {
                             width: "25%",
                             margin: "auto",
                             marginBottom: "5%",
-                            padding: "0",
                             border: "none",
                             padding: "1%",
                             display: "flex",
@@ -177,7 +159,6 @@ export const CreatePost = () => {
                           value={imgurl}
                           onChange={(e) => setImgurl(e.target.value)}
                         />
-                        {/* <input type="submit" /> */}
                       </form>
                     </div>
                   ) : (
@@ -189,7 +170,8 @@ export const CreatePost = () => {
                       display: "flex",
                       flexDirection: "column",
                       marginTop: "5%",
-                    }}>
+                    }}
+                  >
                     <Input
                       type="text"
                       placeholder="Post Title (Required)"
@@ -219,7 +201,8 @@ export const CreatePost = () => {
                       flexDirection: "column",
                       marginTop: "5%",
                       marginBottom: "5%",
-                    }}>
+                    }}
+                  >
                     <div style={{ fontSize: "18px", fontWeight: "500" }}>
                       Tags
                     </div>
@@ -240,7 +223,8 @@ export const CreatePost = () => {
                   backgroundColor: "white",
                   borderRadius: "9px",
                   boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                }}>
+                }}
+              >
                 <div style={{ width: "90%", margin: "auto", marginTop: "6%" }}>
                   <Button
                     size="md"
@@ -250,7 +234,8 @@ export const CreatePost = () => {
                     background="#22549F"
                     disabled={imgurl === "" || title === ""}
                     style={{ color: "white", fontWeight: "500" }}
-                    onClick={() => handlecreatepost()}>
+                    onClick={() => handlecreatepost()}
+                  >
                     Publish
                   </Button>
                 </div>
@@ -260,24 +245,29 @@ export const CreatePost = () => {
                     margin: "auto",
                     backgroundColor: "white",
                     marginTop: "5%",
-                  }}>
+                  }}
+                >
                   <RadioGroup onChange={setValue} value={value}>
                     <Stack
                       direction="row"
-                      style={{ display: "flex", flexDirection: "column" }}>
+                      style={{ display: "flex", flexDirection: "column" }}
+                    >
                       <Radio
                         value="pubic"
-                        style={{ marginTop: "2.5%", marginBottom: "2.5%" }}>
+                        style={{ marginTop: "2.5%", marginBottom: "2.5%" }}
+                      >
                         Public
                       </Radio>
                       <Radio
                         value="patrons-only"
-                        style={{ marginTop: "2.5%", marginBottom: "2.5%" }}>
+                        style={{ marginTop: "2.5%", marginBottom: "2.5%" }}
+                      >
                         Patrons Only
                       </Radio>
                       <Radio
                         value="select-tier"
-                        style={{ marginTop: "2.5%", marginBottom: "2.5%" }}>
+                        style={{ marginTop: "2.5%", marginBottom: "2.5%" }}
+                      >
                         Select Tier
                       </Radio>
                     </Stack>
@@ -293,13 +283,13 @@ export const CreatePost = () => {
                     margin: "auto",
                     marginTop: "2.5%",
                     marginBottom: "2.5%",
-                  }}>
+                  }}
+                >
                   <div style={{ fontWeight: "500", fontSize: "16px" }}>
                     Early Access:
                   </div>
                   <div>
                     <Stack direction="row">
-                      {/* <Switch colorScheme='red' /> */}
                       <Switch colorScheme="blue" />
                     </Stack>
                   </div>
@@ -315,7 +305,8 @@ export const CreatePost = () => {
                     margin: "auto",
                     marginTop: "2.5%",
                     marginBottom: "2.5%",
-                  }}>
+                  }}
+                >
                   <div style={{ fontWeight: "500", fontSize: "16px" }}>
                     Preview Text
                   </div>

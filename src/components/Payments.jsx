@@ -3,7 +3,6 @@ import {
   Stack,
   Input,
   InputGroup,
-  InputLeftElement,
   InputLeftAddon,
   Text,
   Button,
@@ -11,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { BsCurrencyDollar, BsFillLockFill } from "react-icons/bs";
 import { useState } from "react";
-import { Otpmodal } from "./Otpmodal";
+
 import {
   AlertDialog,
   AlertDialogBody,
@@ -32,16 +31,15 @@ export const Payments = () => {
   const [cvv, setCVV] = useState("");
   const [postalcode, setPostalcode] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
-    const cancelRef = React.useRef();
-    const n = useNavigate()
-    const dispatch = useDispatch()
+  const cancelRef = React.useRef();
+  const n = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const p = localStorage.getItem("price");
     setPrice(p);
   }, []);
 
-  // const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <div style={{ width: "100%", margin: "30px" }}>
       <div
@@ -50,14 +48,16 @@ export const Payments = () => {
           margin: "auto",
           display: "flex",
           justifyContent: "space-between",
-        }}>
+        }}
+      >
         <div
           style={{
             width: "55%",
             display: "flex",
             boxShadow:
               "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
-          }}>
+          }}
+        >
           <div style={{ width: "25%", padding: "2%" }}>
             <div style={{ margin: "22% 2%", fontWeight: "500" }}>
               Choose what you pay
@@ -74,7 +74,8 @@ export const Payments = () => {
                 display: "flex",
                 width: "100%",
                 alignItems: "center",
-              }}>
+              }}
+            >
               <Stack spacing={4} style={{ padding: "0% 0" }}>
                 <InputGroup>
                   <InputLeftAddon
@@ -107,7 +108,8 @@ export const Payments = () => {
                 padding: "4%",
                 boxShadow:
                   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
-              }}>
+              }}
+            >
               <Text mb="8px">Name</Text>
               <Input
                 type="text"
@@ -124,14 +126,16 @@ export const Payments = () => {
                   justifyContent: "space-between",
                   flexDirection: "column",
                   marginTop: "5%",
-                }}>
+                }}
+              >
                 <Text mb="8px">Card Number</Text>
                 <div
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
-                  }}>
+                  }}
+                >
                   <Input
                     type="number"
                     value={cardnum}
@@ -152,13 +156,15 @@ export const Payments = () => {
                   justifyContent: "space-between",
                   flexDirection: "row",
                   marginTop: "5%",
-                }}>
+                }}
+              >
                 <div
                   style={{
                     display: "flex",
                     flexDirection: "column",
                     padding: "2% 2% 2% 0",
-                  }}>
+                  }}
+                >
                   <Text mb="8px" style={{ fontSize: "13px" }}>
                     Expiration Date
                   </Text>
@@ -177,7 +183,8 @@ export const Payments = () => {
                     display: "flex",
                     flexDirection: "column",
                     padding: "2%",
-                  }}>
+                  }}
+                >
                   <Text mb="8px" style={{ fontSize: "13px" }}>
                     CVV
                   </Text>
@@ -196,7 +203,8 @@ export const Payments = () => {
                     display: "flex",
                     flexDirection: "column",
                     padding: "2% 0 2% 2%",
-                  }}>
+                  }}
+                >
                   <Text mb="8px" style={{ fontSize: "13px" }}>
                     Postal Code
                   </Text>
@@ -223,7 +231,8 @@ export const Payments = () => {
                   width="100%"
                   mt="5%"
                   background="#22549F"
-                  disabled>
+                  disabled
+                >
                   Pay Now
                 </Button>
               ) : (
@@ -233,14 +242,16 @@ export const Payments = () => {
                     width="100%"
                     mt="5%"
                     background="#22549F"
-                    onClick={onOpen}>
+                    onClick={onOpen}
+                  >
                     Pay Now
                   </Button>
 
                   <AlertDialog
                     isOpen={isOpen}
                     leastDestructiveRef={cancelRef}
-                    onClose={onClose}>
+                    onClose={onClose}
+                  >
                     <AlertDialogOverlay>
                       <AlertDialogContent>
                         <AlertDialogHeader fontSize="lg" fontWeight="bold">
@@ -256,11 +267,12 @@ export const Payments = () => {
                             colorScheme="blue"
                             onClick={() => {
                               onClose();
-                                localStorage.setItem("price", "0");
-                                n("/")
-                                dispatch(handleLogOut())
+                              localStorage.setItem("price", "0");
+                              n("/");
+                              dispatch(handleLogOut());
                             }}
-                            ml={3}>
+                            ml={3}
+                          >
                             done
                           </Button>
                         </AlertDialogFooter>
@@ -279,14 +291,16 @@ export const Payments = () => {
             padding: "2%",
             boxShadow:
               "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
-          }}>
+          }}
+        >
           <div style={{ fontWeight: "500" }}>Summary</div>
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
               margin: "5% 0 5% 0",
-            }}>
+            }}
+          >
             <div style={{ fontWeight: "500" }}>${price}</div>
             <div style={{ fontWeight: "500" }}>USD ${price}</div>
           </div>
@@ -299,7 +313,8 @@ export const Payments = () => {
               display: "flex",
               justifyContent: "space-between",
               margin: "5% 0 5% 0",
-            }}>
+            }}
+          >
             <div style={{ fontWeight: "500" }}>GST (IN)</div>
             <div style={{ fontWeight: "500" }}>
               USD ${parseInt(price) * (18 / 100)}
@@ -311,7 +326,8 @@ export const Payments = () => {
               display: "flex",
               justifyContent: "space-between",
               margin: "5% 0 5% 0",
-            }}>
+            }}
+          >
             <div style={{ fontWeight: "500" }}>Today's Charge</div>
             <div style={{ fontWeight: "500" }}>
               USD ${parseInt(price) * (18 / 100) + parseInt(price)}
@@ -323,7 +339,8 @@ export const Payments = () => {
               display: "flex",
               justifyContent: "space-between",
               margin: "5% 0 5% 0",
-            }}>
+            }}
+          >
             <div style={{ fontWeight: "500" }}>Currency</div>
             <div style={{ fontWeight: "500" }}>USD</div>
           </div>
@@ -343,7 +360,6 @@ export const Payments = () => {
           </div>
         </div>
       </div>
-      {/* <Otpmodal props={const { isOpen, onOpen, onClose } = useDisclosure()}/> */}
     </div>
   );
 };

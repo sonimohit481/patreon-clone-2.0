@@ -1,10 +1,4 @@
-import {
-  ChevronDownIcon,
-  ChevronRightIcon,
-  ChevronUpIcon,
-  EditIcon,
-  Search2Icon,
-} from "@chakra-ui/icons";
+import { ChevronDownIcon, EditIcon, Search2Icon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
@@ -12,14 +6,12 @@ import {
   Heading,
   IconButton,
   Img,
-  chakra,
   Text,
   Input,
   InputGroup,
   InputLeftElement,
   Tag,
   TagLabel,
-  TagRightIcon,
   TagLeftIcon,
 } from "@chakra-ui/react";
 import { FiHeadphones, FiImage, FiUpload, FiVideo } from "react-icons/fi";
@@ -28,90 +20,80 @@ import {
   Menu,
   MenuButton,
   MenuList,
-  MenuItem,
   MenuItemOption,
-  MenuGroup,
   MenuOptionGroup,
-  MenuDivider,
 } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDisclosure } from "@chakra-ui/react";
-import { IoMdSettings } from "react-icons/io";
-import { BsImage } from "react-icons/bs";
+
 import Post from "./Post";
 import CreateButton from "./CreateButton";
 import { MembershipPage } from "../../pages/patron/membership/MembershipPage";
 
 function MyPage({ userData }) {
-  const { isOpen, onToggle, onOpen, onClose } = useDisclosure();
+  const { onToggle, onClose } = useDisclosure();
   const [tiers, setTiers] = useState(["one", "vip", "exclusive"]);
   const [Posts, setPosts] = useState([]);
   const [openBox, setOpenBox] = useState(false);
-  const [filterByMedia, setFilterByMedia] = useState("")
-  const [filterByTier, setFilterByTier] = useState("All")
-  const [queryParam, setQueryParam] = useState("")
-  const [ _sort, setSort] = useState("asc")
-
+  const [filterByMedia, setFilterByMedia] = useState("");
+  const [filterByTier, setFilterByTier] = useState("All");
+  const [queryParam, setQueryParam] = useState("");
+  const [_sort, setSort] = useState("asc");
 
   useEffect(() => {
-    // console.log(userData?.creator_mode);
-    // console.log(userData.creator_mode.posts);
     setPosts(userData?.creator_mode?.posts);
-    setTiers(userData.creator_mode.tiers)
+    setTiers(userData.creator_mode.tiers);
   }, []);
 
   function _ByMediaType(post) {
     if (filterByMedia === "") {
-        return true
-      }
-      return (post.type.toUpperCase() === filterByMedia.toUpperCase())
-  }
-function _ByMediaTier(post) {
-  if (filterByTier === "All") {
-    return true;
-  }
-  return post.tier.toUpperCase() === filterByTier.toUpperCase();
-}
-  
-  function _SearchPosts(post) {
-    console.log(post)
-    if (queryParam === "") {
-      return true
+      return true;
     }
-    else if (
+    return post.type.toUpperCase() === filterByMedia.toUpperCase();
+  }
+  function _ByMediaTier(post) {
+    if (filterByTier === "All") {
+      return true;
+    }
+    return post.tier.toUpperCase() === filterByTier.toUpperCase();
+  }
+
+  function _SearchPosts(post) {
+    console.log(post);
+    if (queryParam === "") {
+      return true;
+    } else if (
       post.type.includes(queryParam) ||
       post.title.includes(queryParam) ||
       post.desc.includes(queryParam) ||
       post.date.includes(queryParam) ||
       post.tier.includes(queryParam)
     ) {
-      return true
-    }
-    else return false
+      return true;
+    } else return false;
   }
   return (
     <>
       <header>
         <Box
-          // backgroundRepeat="repeat"
-          // position="absolute"
           height="40vh"
           bgSize={"cover"}
           backgroundImage={`url(${userData?.creator_mode?.bgImg})`}
-          backgroundPosition="center center"></Box>
+          backgroundPosition="center center"
+        ></Box>
       </header>
 
       <div>
         <Img
           width={"5rem"}
-
           height={"5rem"}
           position="relative"
           left={"47%"}
           top={"-10"}
           borderRadius={"50px"}
-          src={`${userData?.creator_mode?.profilePic}`}></Img>
+          src={`${userData?.creator_mode?.profilePic}`}
+        ></Img>
         <Box marginTop={"-70px"}>
           <Flex justifyContent={"end"} gap={"10px"} padding={"10px"}>
             <CreateButton props={{ openBox, setOpenBox }} />
@@ -120,7 +102,8 @@ function _ByMediaTier(post) {
                 setOpenBox(!openBox);
               }}
               leftIcon={<EditIcon />}
-              colorScheme={"facebook"}>
+              colorScheme={"facebook"}
+            >
               Create
             </Button>
             <IconButton icon={<FiUpload />} />
@@ -130,7 +113,8 @@ function _ByMediaTier(post) {
       </div>
       <Box textAlign={"center"} p={2}>
         <Heading
-          size={"md"}>{`${userData.creator_mode?.creatormode_name}`}</Heading>
+          size={"md"}
+        >{`${userData.creator_mode?.creatormode_name}`}</Heading>
         <Text color={"gray"}>{`${userData.creator_mode?.creatorType}`}</Text>
       </Box>
 
@@ -150,7 +134,8 @@ function _ByMediaTier(post) {
                     borderRadius="md"
                     borderWidth="1px"
                     px={4}
-                    py={2}>
+                    py={2}
+                  >
                     Media type {<ChevronDownIcon />}
                   </MenuButton>
                   <MenuList minWidth="240px">
@@ -159,14 +144,16 @@ function _ByMediaTier(post) {
                         setFilterByMedia(e);
                       }}
                       defaultValue="all"
-                      title="Filter by media type">
+                      title="Filter by media type"
+                    >
                       <MenuItemOption value="Image">
                         <Tag
                           size={"md"}
                           variant="outline"
                           fontSize={"small"}
                           color={"black"}
-                          colorScheme={"gray"}>
+                          colorScheme={"gray"}
+                        >
                           <TagLeftIcon as={FiImage} />
                           <TagLabel>
                             <strong>Image</strong>
@@ -179,7 +166,8 @@ function _ByMediaTier(post) {
                           variant="outline"
                           fontSize={"small"}
                           color={"black"}
-                          colorScheme={"gray"}>
+                          colorScheme={"gray"}
+                        >
                           <TagLeftIcon as={FiVideo} />
                           <TagLabel>
                             <strong>Video</strong>
@@ -192,7 +180,8 @@ function _ByMediaTier(post) {
                           variant="outline"
                           fontSize={"small"}
                           color={"black"}
-                          colorScheme={"gray"}>
+                          colorScheme={"gray"}
+                        >
                           <TagLeftIcon as={FiHeadphones} />
                           <TagLabel>
                             <strong>Audio</strong>
@@ -209,21 +198,24 @@ function _ByMediaTier(post) {
                     borderRadius="md"
                     borderWidth="1px"
                     px={4}
-                    py={2}>
+                    py={2}
+                  >
                     Tier {<ChevronDownIcon />}
                   </MenuButton>
                   <MenuList minWidth="240px">
                     <MenuOptionGroup
                       onChange={setFilterByTier}
                       title="Filter by tier"
-                      type="radio">
+                      type="radio"
+                    >
                       <MenuItemOption onClose={onClose} value="All">
                         <Tag
                           size={"md"}
                           variant="outline"
                           fontSize={"small"}
                           color={"black"}
-                          colorScheme={"gray"}>
+                          colorScheme={"gray"}
+                        >
                           <TagLabel>
                             <strong>All Patrons</strong>
                           </TagLabel>
@@ -232,13 +224,15 @@ function _ByMediaTier(post) {
                       {tiers.map((tier) => (
                         <MenuItemOption
                           onClose={onClose}
-                          value={`${tier.name}`}>
+                          value={`${tier.name}`}
+                        >
                           <Tag
                             size={"md"}
                             variant="outline"
                             fontSize={"small"}
                             color={"black"}
-                            colorScheme={"gray"}>
+                            colorScheme={"gray"}
+                          >
                             <TagLabel>
                               <strong>{tier.name}</strong>
                             </TagLabel>
@@ -255,7 +249,8 @@ function _ByMediaTier(post) {
                     borderRadius="md"
                     borderWidth="1px"
                     px={4}
-                    py={2}>
+                    py={2}
+                  >
                     Month {<ChevronDownIcon />}
                   </MenuButton>
                   <MenuList minWidth="240px">
@@ -268,7 +263,8 @@ function _ByMediaTier(post) {
                           variant="outline"
                           fontSize={"small"}
                           color={"black"}
-                          colorScheme={"gray"}>
+                          colorScheme={"gray"}
+                        >
                           <TagLabel>
                             <strong>June</strong>
                           </TagLabel>
@@ -280,7 +276,8 @@ function _ByMediaTier(post) {
                           variant="outline"
                           fontSize={"small"}
                           color={"black"}
-                          colorScheme={"gray"}>
+                          colorScheme={"gray"}
+                        >
                           <TagLabel>
                             <strong>July</strong>
                           </TagLabel>
@@ -296,7 +293,8 @@ function _ByMediaTier(post) {
                     setFilterByMedia("");
                     setFilterByTier("All");
                   }}
-                  color={"blue.500"}>
+                  color={"blue.500"}
+                >
                   clear all filter
                 </Text>
               </Box>
@@ -310,7 +308,8 @@ function _ByMediaTier(post) {
                     setQueryParam(e.target.value);
                   }}
                   placeholder="Search posts"
-                  type={"search"}></Input>
+                  type={"search"}
+                ></Input>
               </InputGroup>
               <Box margin={"40px 0"}>
                 <Menu closeOnSelect={true}>
@@ -318,7 +317,8 @@ function _ByMediaTier(post) {
                     onClick={onToggle}
                     borderRadius="md"
                     px={4}
-                    py={2}>
+                    py={2}
+                  >
                     Sort by date {<ChevronDownIcon />}
                   </MenuButton>
                   <MenuList minWidth="240px">
@@ -326,7 +326,8 @@ function _ByMediaTier(post) {
                       onChange={setSort}
                       defaultValue="asc"
                       title="Sort by"
-                      type="radio">
+                      type="radio"
+                    >
                       <MenuItemOption onClose={onClose} value="asc">
                         Oldest to newest
                       </MenuItemOption>
@@ -344,8 +345,8 @@ function _ByMediaTier(post) {
                   .filter(_SearchPosts)
                   .sort(
                     _sort === "asc"
-                    ? (a, b) => a.index - b.index
-                    : (a, b) => b.index - a.index
+                      ? (a, b) => a.index - b.index
+                      : (a, b) => b.index - a.index
                   )
                   .map((post) => (
                     <Post id={userData.id} property={post} />
@@ -354,7 +355,7 @@ function _ByMediaTier(post) {
             </TabPanel>
             {/* initially not mounted */}
             <TabPanel>
-             <MembershipPage />
+              <MembershipPage />
             </TabPanel>
           </TabPanels>
         </Tabs>

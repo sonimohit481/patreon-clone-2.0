@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
   IconButton,
   Button,
@@ -12,30 +11,9 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuDivider,
   useDisclosure,
-  useColorModeValue,
   Stack,
-  background,
-  color,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,
   Input,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
   InputGroup,
   InputLeftElement,
 } from "@chakra-ui/react";
@@ -50,26 +28,9 @@ import {
   SearchIcon,
 } from "@chakra-ui/icons";
 
-const Links = ["Dashboard", "Projects", "Team"];
-
-const NavLink = ({ children }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={"md"}
-    _hover={{
-      textDecoration: "none",
-      bg: useColorModeValue("gray.200", "gray.700"),
-    }}
-    href={"#"}
-  >
-    {children}
-  </Link>
-);
-
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [OC, setOC] = useState(false);
+
   const navigate = useNavigate();
   return (
     <div style={{ position: "sticky", top: "0", zIndex: "1" }}>
@@ -119,13 +80,8 @@ export default function Navbar() {
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              {/* <select name="product">
-                <option value=""></option>
-              </select> */}
               <Menu>
                 <MenuButton
-                  // onMouseEnter={onOpen}
-                  // onMouseLeave={onClose}
                   as={Button}
                   rightIcon={<ChevronDownIcon />}
                   bg={"white"}
@@ -157,8 +113,6 @@ export default function Navbar() {
             <HStack>
               <Menu>
                 <MenuButton
-                  // onMouseEnter={() => setOC(true)}
-                  // onMouseLeave={() => setOC(false)}
                   as={Button}
                   rightIcon={<ChevronDownIcon />}
                   bg={"white"}
@@ -166,8 +120,6 @@ export default function Navbar() {
                   For Creators
                 </MenuButton>
                 <MenuList>
-                  {/* mohit soni */}
-
                   <Link to={"Podcast"}>
                     <MenuItem icon={<AddIcon />}>Podcasters</MenuItem>
                   </Link>

@@ -1,19 +1,18 @@
 import { Box, Center, CircularProgress, Flex } from "@chakra-ui/react";
-import React, { useContext, useEffect, useState } from "react";
-import Patrons from "../../../components/Dashboard/Patrons";
+import React, { useContext, useEffect } from "react";
+
 import Sidebar from "../../../components/Dashboard/Sidebar";
-import MyPage from "../../../components/Dashboard/MyPage";
+
 import { SidebarContext } from "../../../context/SidebarContext";
-import Insights from "../../../components/Dashboard/Insights";
-import Payouts from "../../../components/Dashboard/Payouts";
+
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { fetchUserData } from "../../../redux/userData/action";
 import { FiMail, FiSettings } from "react-icons/fi";
-import { IoCompassOutline } from "react-icons/io5";
+
 import { BsCompass } from "react-icons/bs";
 import { MdOutlineFeed } from "react-icons/md";
-import { FeedCard } from "../../../components/patron/feed/FeedCard";
+
 import { MembershipPage } from "../../patron/membership/MembershipPage";
 import FindCreator from "../../../components/Dashboard/Patron/FindCreator";
 import { Feed } from "../../../components/patron/feed/Feed";
@@ -28,7 +27,7 @@ const LinkItems = [
 function PatronHome() {
   const { token } = useSelector((state) => state.auth);
   const [sidebarButtonValue] = useContext(SidebarContext);
-  // const [userData, setUserData] = useState({});
+
   const { userData } = useSelector((state) => state.userData);
   const dispatch = useDispatch();
 

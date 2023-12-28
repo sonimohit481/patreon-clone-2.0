@@ -3,17 +3,13 @@ import {
   Flex,
   Box,
   FormControl,
-  FormLabel,
   Input,
-  Checkbox,
   Stack,
   Link,
   Button,
-  Heading,
   Text,
-  useColorModeValue,
 } from "@chakra-ui/react";
-import { ViewOffIcon } from "@chakra-ui/icons";
+
 import { handleUserLoginFetch } from "../../redux/auth/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
@@ -23,7 +19,6 @@ const loginDetails = {
   password: "",
 };
 export const Login = () => {
-  // console.log("rendering Login");
   const navigate = useNavigate();
   const [userAuthData, setUserAuthData] = React.useState(loginDetails);
   const { email, password } = userAuthData;
@@ -32,7 +27,6 @@ export const Login = () => {
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setUserAuthData((prev) => ({ ...prev, [name]: value }));
-    // console.log(userAuthData)
   };
 
   const handleOncliCk = () => {
@@ -55,9 +49,6 @@ export const Login = () => {
           >
             <Stack align={"center"}>
               <Text fontSize={"3xl"}>Log in</Text>
-              {/* <Text fontSize={'lg'} color={'gray.600'}>
-              to enjoy all of our cool <Link color={'blue.400'}>features</Link> ✌️
-            </Text> */}
             </Stack>
             <Box rounded={"lg"} bg={"white"} boxShadow={"lg"} p={8}>
               <Stack spacing={4}>

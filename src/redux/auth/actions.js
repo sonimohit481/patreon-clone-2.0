@@ -7,7 +7,6 @@ import {
   USER_REGISTER_LOADING,
   USER_REGISTER_SUCCESS,
 } from "./actionTypes";
-import { Navigate } from "react-router-dom";
 
 export const handleLoginSuccess = (payload) => {
   return {

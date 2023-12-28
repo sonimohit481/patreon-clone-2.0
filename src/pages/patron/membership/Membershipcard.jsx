@@ -1,32 +1,20 @@
-import React, { useContext } from 'react'
-import { Heading } from '@chakra-ui/react'
-import { Image } from '@chakra-ui/react'
-import { Button, ButtonGroup } from '@chakra-ui/react'
-import { useNavigate } from 'react-router-dom'
-import { SidebarContext } from '../../../context/SidebarContext'
+import React, { useContext } from "react";
+import { Heading } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 
+import { SidebarContext } from "../../../context/SidebarContext";
 
 export const Membershipcard = (props) => {
-      const [, ToggleSidebarButtonValue] = useContext(SidebarContext);
-    const n =useNavigate()
+  const [, ToggleSidebarButtonValue] = useContext(SidebarContext);
 
+  function handlePayment() {
+    localStorage.setItem("price", `${monthlyPrice}`);
+    ToggleSidebarButtonValue("payment");
+  }
 
-    function handlePayment() {
-        localStorage.setItem("price", `${monthlyPrice}`);
-        ToggleSidebarButtonValue("payment")
-    
-    }
- 
-// const tier={
-//     name: "Free",
-// monthlyPrice: "0",
-// tierdescription: "this is free tier description",
-// cover_image: "https://picsum.photos/id/23/200/300",
-// benefits: "Not ad-free Content"
-// }
-
-const { name, cover_image, monthlyPrice, benefits } = props.tier;
-console.log(benefits)
+  const { name, cover_image, monthlyPrice, benefits } = props.tier;
+  console.log(benefits);
   return (
     <div
       style={{
@@ -36,20 +24,15 @@ console.log(benefits)
         flexDirection: "column",
         alignItems: "center",
         boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-      }}>
+      }}
+    >
       <div>
         <Heading as="h4" size="md" padding="30px 10px 40px 10px">
           {name}
         </Heading>
       </div>
       <div>
-        <Image
-            
-            objectFit='cover'
-            src={cover_image}
-            alt='Dan Abramov'
-            
-            />
+        <Image objectFit="cover" src={cover_image} alt="Dan Abramov" />
       </div>
       <div
         style={{
@@ -58,7 +41,8 @@ console.log(benefits)
           justifyContent: "center",
           flexDirection: "column",
           alignItems: "center",
-        }}>
+        }}
+      >
         <Heading as="h4" size="md">
           $ {monthlyPrice}
         </Heading>
@@ -76,4 +60,4 @@ console.log(benefits)
       </div>
     </div>
   );
-}
+};

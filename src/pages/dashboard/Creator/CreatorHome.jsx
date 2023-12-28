@@ -1,5 +1,5 @@
 import { Box, Center, CircularProgress, Flex } from "@chakra-ui/react";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import Patrons from "../../../components/Dashboard/Patrons";
 import Sidebar from "../../../components/Dashboard/Sidebar";
 import MyPage from "../../../components/Dashboard/MyPage";
@@ -8,7 +8,7 @@ import Insights from "../../../components/Dashboard/Insights";
 import Payouts from "../../../components/Dashboard/Payouts";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { fetchUserData, handleUserDataFetch } from "../../../redux/userData/action";
+import { fetchUserData } from "../../../redux/userData/action";
 import { FiHome, FiMail, FiSettings } from "react-icons/fi";
 import { IoPeopleOutline } from "react-icons/io5";
 import { CgInsights } from "react-icons/cg";
@@ -28,13 +28,12 @@ const LinkItems = [
 function CreatorHome() {
   const { token } = useSelector((state) => state.auth);
   const [sidebarButtonValue] = useContext(SidebarContext);
-  // const [userData, setUserData] = useState({});
-  const {userData} = useSelector((state)=>state.userData)
-  const dispatch = useDispatch()
 
+  const { userData } = useSelector((state) => state.userData);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchUserData(token))
+    dispatch(fetchUserData(token));
   }, []);
 
   return (

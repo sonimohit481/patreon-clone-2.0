@@ -1,13 +1,25 @@
-import { Box, Button, Flex, Heading, Input, InputGroup, InputLeftAddon, InputLeftElement, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+} from "@chakra-ui/react";
 import {
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
   Td,
-  TableCaption,
   TableContainer,
 } from "@chakra-ui/react";
 import React from "react";
@@ -15,10 +27,11 @@ import { BsSearch } from "react-icons/bs";
 import { FaSort } from "react-icons/fa";
 
 function Patrons({ userData }) {
-  console.log(userData.creator_mode.subscriber_patrons)
-  const patrons = userData.creator_mode.subscriber_patrons
-let today = new Date();
-let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  console.log(userData.creator_mode.subscriber_patrons);
+  const patrons = userData.creator_mode.subscriber_patrons;
+  let today = new Date();
+  let time =
+    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
   return (
     <>
@@ -39,12 +52,15 @@ let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                 <Flex margin={"30px 0"} gap={"10px"}>
                   <InputGroup maxWidth={"max-content"}>
                     <InputLeftElement
-                      children={<BsSearch />}></InputLeftElement>
+                      children={<BsSearch />}
+                    ></InputLeftElement>
                     <Input placeholder="Search for name or email"></Input>
                   </InputGroup>
                   <Button size={"sm"}>Message</Button>
                   <Button size={"sm"}>CSV</Button>
-                  <Text color={"gray"} pl={3} fontSize={"sm"}>As of {time}</Text>
+                  <Text color={"gray"} pl={3} fontSize={"sm"}>
+                    As of {time}
+                  </Text>
                 </Flex>
 
                 <Flex gap="10px">
@@ -66,7 +82,8 @@ let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                   <Button
                     size={"sm"}
                     color={"facebook.300"}
-                    colorScheme={"white"}>
+                    colorScheme={"white"}
+                  >
                     clear all
                   </Button>
                 </Flex>
@@ -76,7 +93,8 @@ let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                     borderWidth={"1px"}
                     borderRadius="4px"
                     p={2}
-                    boxSizing="border-box">
+                    boxSizing="border-box"
+                  >
                     {/* table data */}
                     <TableContainer>
                       <Table size="sm">
@@ -87,7 +105,8 @@ let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                                 size={"sm"}
                                 rightIcon={<FaSort />}
                                 color={"black"}
-                                colorScheme={"white"}>
+                                colorScheme={"white"}
+                              >
                                 Name
                               </Button>
                             </Th>
@@ -97,7 +116,8 @@ let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                                 size={"sm"}
                                 rightIcon={<FaSort />}
                                 color={"black"}
-                                colorScheme={"white"}>
+                                colorScheme={"white"}
+                              >
                                 Email
                               </Button>
                             </Th>
@@ -107,7 +127,8 @@ let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                                 size={"sm"}
                                 rightIcon={<FaSort />}
                                 color={"black"}
-                                colorScheme={"white"}>
+                                colorScheme={"white"}
+                              >
                                 Current Tier
                               </Button>
                             </Th>
@@ -116,7 +137,8 @@ let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                                 size={"sm"}
                                 rightIcon={<FaSort />}
                                 color={"black"}
-                                colorScheme={"white"}>
+                                colorScheme={"white"}
+                              >
                                 Pledge
                               </Button>
                             </Th>
@@ -124,7 +146,8 @@ let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                               <Button
                                 size={"sm"}
                                 color={"black"}
-                                colorScheme={"white"}>
+                                colorScheme={"white"}
+                              >
                                 Status
                               </Button>
                             </Th>
@@ -133,7 +156,8 @@ let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                                 size={"sm"}
                                 rightIcon={<FaSort />}
                                 color={"black"}
-                                colorScheme={"white"}>
+                                colorScheme={"white"}
+                              >
                                 Join Date
                               </Button>
                             </Th>
@@ -141,19 +165,16 @@ let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
                         </Thead>
 
                         <Tbody h={"40vh"} verticalAlign="top">
-                          {
-                            patrons.map(patron => (
-                              
-                              <Tr key={patron.email}>
-                            <Td>{patron.name}</Td>
-                            <Td>{patron.email}</Td>
-                            <Td>{patron.current_tier}</Td>
-                            <Td>{patron.pledge}</Td>
-                            <Td>{patron.status}</Td>
-                            <Td>{patron.join_date}</Td>
-                          </Tr>
-                              ))
-                          }
+                          {patrons.map((patron) => (
+                            <Tr key={patron.email}>
+                              <Td>{patron.name}</Td>
+                              <Td>{patron.email}</Td>
+                              <Td>{patron.current_tier}</Td>
+                              <Td>{patron.pledge}</Td>
+                              <Td>{patron.status}</Td>
+                              <Td>{patron.join_date}</Td>
+                            </Tr>
+                          ))}
                         </Tbody>
                       </Table>
                     </TableContainer>
