@@ -1,3 +1,12 @@
+# Note
+
+**Update**: This repository serves as an updated version of the cloned [Patreon clone](https://patreon-clone-lovat.vercel.app/) ( [github link](https://github.com/shiwam-C114/patreon-clone) ). 
+The previous version encountered issues and is no longer functional. I have made improvements and fixes to provide a more reliable and feature-rich experience.
+
+For the latest deployed version, visit [Patreon clone 2.0](https://patreon-clone-2.netlify.app).
+
+Thank you for your understanding and continued support!
+
 # Patreon-Clone
 
 Clone of <a href="https://www.patreon.com/">www.patreon.com</a> Patreon is a membership platform that provides business tools for content creators to run a subscription service. It helps creators and artists earn a monthly income by providing rewards and perks to their subscribers.
@@ -6,27 +15,24 @@ Clone of <a href="https://www.patreon.com/">www.patreon.com</a> Patreon is a mem
 
 ## Installation
 
-Use the package manager [npm](https://docs.npmjs.com/cli/v6/commands/npm-install) to install the node module files.
+Use the package manager [Yarn](https://yarnpkg.com/) to install the node module files.
 
 ```bash
-npm install
+yarn
 ```
 
 ## Usage
 
 ```python
-npm start
+yarn start
 ```
 
 ## Deployment Link
 ```url
-   https://patreon-clone-lovat.vercel.app/
+https://patreon-clone-2.netlify.app
 ```
 
-## Contributors
-- [Shiwam Tiwari](https://github.com/shiwam-C114)
-- [Damodar Gupta P S](https://github.com/damodarkolar)
-- [Atharva Tribhuwane](https://github.com/atharva-tribhuwane)
+## Editor
 - [Mohit Soni](https://github.com/sonimohit481)
 
 ## Tech Stack
