@@ -34,6 +34,7 @@ function CreatorHome() {
 
   useEffect(() => {
     dispatch(fetchUserData(token));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

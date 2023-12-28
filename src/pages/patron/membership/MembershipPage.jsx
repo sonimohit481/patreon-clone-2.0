@@ -11,6 +11,7 @@ export const MembershipPage = () => {
       .then((res) => res.json())
       .then((data) => setTiers(data.creator_mode.tiers))
       .catch((err) => console.log(err));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

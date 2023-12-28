@@ -32,9 +32,11 @@ export const CreatePost = () => {
   const [caption, setCaption] = useState("");
 
   const [value, setValue] = useState("1");
-  const [length, setLength] = useState(0);
+  // const [length, setLength] = useState(0);
+  const length = 0;
   const location = useLocation();
-  const [type, setType] = useState(location.state.prop);
+  // const [type, setType] = useState(location.state.prop);
+  const type = location.state.prop;
   const { token } = useSelector((state) => state.auth);
   console.log(token);
   console.log("Prop is:", type);
@@ -77,6 +79,7 @@ export const CreatePost = () => {
       setData(data1);
     }
     getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const { userData } = useSelector((state) => state.userData);
 

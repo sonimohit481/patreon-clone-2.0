@@ -1,13 +1,8 @@
 import React from "react";
 
 import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
   Box,
   Button,
-  CloseButton,
   Flex,
   Heading,
   Tab,
@@ -16,7 +11,6 @@ import {
   TabPanels,
   Tabs,
   Text,
-  useDisclosure,
 } from "@chakra-ui/react";
 import { Stat, StatNumber, StatHelpText } from "@chakra-ui/react";
 

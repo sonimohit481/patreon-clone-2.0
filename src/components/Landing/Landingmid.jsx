@@ -47,6 +47,7 @@ export const Landingmid = () => {
       clearInterval(id);
       console.log("leaving");
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

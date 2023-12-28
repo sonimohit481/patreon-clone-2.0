@@ -44,6 +44,7 @@ function MyPage({ userData }) {
   useEffect(() => {
     setPosts(userData?.creator_mode?.posts);
     setTiers(userData.creator_mode.tiers);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function _ByMediaType(post) {

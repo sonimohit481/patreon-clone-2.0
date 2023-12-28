@@ -76,6 +76,7 @@ const SidebarContent = ({ LinkItems, onClose, ...rest }) => {
   }
   useEffect(() => {
     getFollowings();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [openBox, setOpenBox] = useState(false);
