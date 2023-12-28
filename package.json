@@ -1,6 +1,8 @@
 {
-  "name": "patreon-clone",
-  "version": "0.1.0",
+  "name": "patreon-clone-2.0",
+  "version": "2.0.0",
+  "license": "MIT",
+  "author": "Mohit Soni",
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^2.0.4",
