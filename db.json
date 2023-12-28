@@ -1,0 +1,293 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "abcd@email.com",
+      "password": "admin",
+      "creator_mode": {
+        "creatormode_name": "John Doe",
+        "bgImg": "https://picsum.photos/id/237/200/300",
+        "profilePic": "https://picsum.photos/id/23/200/300",
+        "creatorType": "video",
+        "posts": [
+          {
+            "type": "image",
+            "title": "Marvel",
+            "desc": "This Is a Dummy Post 1",
+            "date": "20 July 2022",
+            "time": "19:24",
+            "content_url": "https://c10.patreonusercontent.com/4/patreon-media/p/post/70045669/428f8fb3df4143818285f5ff3c4bb6da/eyJ3Ijo2MjB9/1.jpg?token-time=1660867200&token-hash=AlBwP3LO_pWGwwgtIPJyFSkFXnQ6NlcQIo-eTi-O12k%3D",
+            "visibility": "visible",
+            "likes": "234"
+          },
+          {
+            "type": "image",
+            "title": "Marvel",
+            "desc": "This Is a Dummy Post 2",
+            "date": "20 July 2022",
+            "time": "19:24",
+            "content_url": "https://c10.patreonusercontent.com/4/patreon-media/p/post/70045669/428f8fb3df4143818285f5ff3c4bb6da/eyJ3Ijo2MjB9/1.jpg?token-time=1660867200&token-hash=AlBwP3LO_pWGwwgtIPJyFSkFXnQ6NlcQIo-eTi-O12k%3D",
+            "visibility": "not visible",
+            "likes": "234"
+          },
+          {
+            "type": "image",
+            "title": "jjjjjjjjjjjjjjjjj",
+            "desc": "jjjjjjjjjjjjjjjjjj",
+            "date": "7/7/2022",
+            "time": "14:38",
+            "content_url": "C:\\fakepath\\191611.jpg",
+            "visibility": "pubic",
+            "likes": 0
+          }
+        ],
+        "tiers": [
+          {
+            "name": "Tier 1",
+            "monthlyPrice": "4.25",
+            "tierdescription": "this is tier description",
+            "cover_image": "https://picsum.photos/id/23/200/300",
+            "benefits": "Add-free Content"
+          },
+          {
+            "name": "Tier 2",
+            "monthlyPrice": "6",
+            "tierdescription": "this is tier description333",
+            "cover_image": "https://picsum.photos/id/23/200/300",
+            "benefits": "Add-free Content,Digital Downloads "
+          },
+          {
+            "name": "Tier 3",
+            "monthlyPrice": "15",
+            "tierdescription": "this is tier description 23232232",
+            "cover_image": "https://picsum.photos/id/23/200/300",
+            "benefits": "Add-free Content,Digital Downloads, Early Ticket Access"
+          }
+        ],
+        "subscriber_patrons": [
+          {
+            "name": "Jack Jack",
+            "email": "jack@email.com",
+            "current_tier": "Tier 1"
+          },
+          {
+            "name": "Jimmy",
+            "email": "jimmy@email.com",
+            "current_tier": "Tier 1"
+          },
+          {
+            "name": "Andrew",
+            "email": "andrew@email.com",
+            "current_tier": "Tier 1"
+          },
+          {
+            "name": "Adam",
+            "email": "adam@email.com",
+            "current_tier": "Tier 1"
+          }
+        ]
+      },
+      "patron_mode": {
+        "subscribed_to": [
+          {
+            "name": "Jack Jack",
+            "email": "jack@email.com"
+          },
+          {
+            "name": "Jimmy",
+            "email": "jimmy@email.com"
+          },
+          {
+            "name": "Andrew",
+            "email": "andrew@email.com"
+          },
+          {
+            "name": "Adam",
+            "email": "adam@email.com"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "email": "abc@email.com",
+      "password": "admin",
+      "creator_mode": {
+        "creatormode_name": "John Doe",
+        "bgImg": "https://picsum.photos/id/237/200/300",
+        "profilePic": "https://picsum.photos/id/23/200/300",
+        "creatorType": "video",
+        "posts": [
+          {
+            "type": "image",
+            "title": "Marvel",
+            "desc": "This Is a Dummy Post 1",
+            "date": "20 July 2022",
+            "time": "19:24",
+            "content_url": "https://c10.patreonusercontent.com/4/patreon-media/p/post/70045669/428f8fb3df4143818285f5ff3c4bb6da/eyJ3Ijo2MjB9/1.jpg?token-time=1660867200&token-hash=AlBwP3LO_pWGwwgtIPJyFSkFXnQ6NlcQIo-eTi-O12k%3D",
+            "visibility": "visible",
+            "likes": "234"
+          }
+        ],
+        "tiers": [
+          {
+            "name": "Tier 1",
+            "monthlyPrice": "4.25",
+            "tierdescription": "this is tier description",
+            "cover_image": "https://picsum.photos/id/23/200/300",
+            "benefits": "Add-free Content"
+          },
+          {
+            "name": "Tier 2",
+            "monthlyPrice": "6",
+            "tierdescription": "this is tier description333",
+            "cover_image": "https://picsum.photos/id/23/200/300",
+            "benefits": "Add-free Content,Digital Downloads "
+          },
+          {
+            "name": "Tier 3",
+            "monthlyPrice": "15",
+            "tierdescription": "this is tier description 23232232",
+            "cover_image": "https://picsum.photos/id/23/200/300",
+            "benefits": "Add-free Content,Digital Downloads, Early Ticket Access"
+          }
+        ],
+        "subscriber_patrons": [
+          {
+            "name": "Jack Jack",
+            "email": "jack@email.com",
+            "current_tier": "Tier 1"
+          },
+          {
+            "name": "Jimmy",
+            "email": "jimmy@email.com",
+            "current_tier": "Tier 1"
+          },
+          {
+            "name": "Andrew",
+            "email": "andrew@email.com",
+            "current_tier": "Tier 1"
+          },
+          {
+            "name": "Adam",
+            "email": "adam@email.com",
+            "current_tier": "Tier 1"
+          }
+        ]
+      },
+      "patron_mode": {
+        "subscribed_to": [
+          {
+            "name": "Jack Jack",
+            "email": "jack@email.com"
+          },
+          {
+            "name": "Jimmy",
+            "email": "jimmy@email.com"
+          },
+          {
+            "name": "Andrew",
+            "email": "andrew@email.com"
+          },
+          {
+            "name": "Adam",
+            "email": "adam@email.com"
+          }
+        ]
+      }
+    },
+    {
+      "email": "atharvatribhuwane@dpcoepune.edu.in",
+      "password": "admin",
+      "creator_mode": {
+        "creatormode_name": "Atharva",
+        "bgImg": "",
+        "profilePic": "",
+        "creatorType": "",
+        "posts": [],
+        "tiers": [],
+        "subscriber_patrons": []
+      },
+      "patron_mode": {
+        "subscribed_to": []
+      },
+      "id": 3
+    },
+    {
+      "email": "amar@email.com",
+      "password": "password",
+      "creator_mode": {
+        "creatormode_name": "AMAR",
+        "bgImg": "",
+        "profilePic": "",
+        "creatorType": "",
+        "posts": [],
+        "tiers": [],
+        "subscriber_patrons": []
+      },
+      "patron_mode": {
+        "subscribed_to": []
+      },
+      "id": 4
+    },
+    {
+      "0": {
+        "type": "image",
+        "title": "Marvel",
+        "desc": "This Is a Dummy Post 1",
+        "date": "20 July 2022",
+        "time": "19:24",
+        "content_url": "https://c10.patreonusercontent.com/4/patreon-media/p/post/70045669/428f8fb3df4143818285f5ff3c4bb6da/eyJ3Ijo2MjB9/1.jpg?token-time=1660867200&token-hash=AlBwP3LO_pWGwwgtIPJyFSkFXnQ6NlcQIo-eTi-O12k%3D",
+        "visibility": "visible",
+        "likes": "234"
+      },
+      "1": {
+        "type": "image",
+        "title": "Marvel",
+        "desc": "This Is a Dummy Post 2",
+        "date": "20 July 2022",
+        "time": "19:24",
+        "content_url": "https://c10.patreonusercontent.com/4/patreon-media/p/post/70045669/428f8fb3df4143818285f5ff3c4bb6da/eyJ3Ijo2MjB9/1.jpg?token-time=1660867200&token-hash=AlBwP3LO_pWGwwgtIPJyFSkFXnQ6NlcQIo-eTi-O12k%3D",
+        "visibility": "not visible",
+        "likes": "234"
+      },
+      "2": {
+        "type": "image",
+        "title": "New Post Up",
+        "desc": "Show ",
+        "date": "7/7/2022",
+        "time": "13:44",
+        "content_url": "C:\\fakepath\\4K-Car-Garage-Tuning-Wallpaper-3840x2160.jpg",
+        "visibility": "patrons-only",
+        "likes": 0
+      },
+      "email": "dummy@fmail.com",
+      "password": "password",
+      "creator_mode": {
+        "creatormode_name": "Dummy Account",
+        "bgImg": "",
+        "profilePic": "",
+        "creatorType": "",
+        "posts": [],
+        "tiers": [],
+        "subscriber_patrons": []
+      },
+      "patron_mode": {
+        "subscribed_to": []
+      },
+      "id": 5,
+      "posts": [
+        {
+          "content_url": "C:\\fakepath\\4K-Wallpaper-3840x2160-75.jpg",
+          "date": "7/7/2022",
+          "desc": "Dummmy Dummy  ",
+          "likes": 0,
+          "time": "13:11",
+          "title": "New Post Up!!!!",
+          "type": "image",
+          "visibility": "patrons-only"
+        }
+      ]
+    }
+  ]
+}

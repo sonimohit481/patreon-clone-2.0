@@ -1,0 +1,45 @@
+.socialMedia img{
+ width: 40px;
+ padding-right: 15px;
+ display: flex;
+ justify-content: space-between;
+}
+.socialMedia {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+   }
+.socialMedia >div{
+    display: flex;
+    justify-content: space-between;
+   }
+#editPageBasics{
+    width: 650px;
+    box-sizing: border-box;
+}
+#editPageBasics>div{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+#editPageBasics>div>div{
+    padding-bottom: 15px;
+}
+
+#checkListBox{
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-left: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 320px;    
+}
+#checkListBox>div{
+    padding-bottom: 40px;
+}
+#checkListBox>div>div{
+    padding-bottom: 10px;
+}
