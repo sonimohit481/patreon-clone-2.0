@@ -4,7 +4,7 @@ import { SignUp } from "./pages/auth/SignUp";
 import CreatorHome from "./pages/dashboard/Creator/CreatorHome";
 import Home from "./pages/main/Home";
 import { AllPlansComponents } from "./pages/products/AllPlansComponents";
-import Pricing from "./pages/pricing/Pricing"
+import Pricing from "./pages/pricing/Pricing";
 import Lite from "./pages/products/Lite";
 import Premium from "./pages/products/Premium";
 import Pro from "./pages/products/Pro";
@@ -28,16 +28,13 @@ import { CreatePost } from "./pages/creators/create/CreatePost";
 import { useSelector } from "react-redux";
 import PatronHome from "./pages/dashboard/Patron/PatronHome";
 function App() {
-  const { token } = useSelector(state => state.auth);
+  const { token } = useSelector((state) => state.auth);
 
   return (
-   <>
-        {
-        //This Will Not show Navbar at payment page as we have sidebar on payment page 
-         !token?
-        <Navbar />
-        :
-        <></>
+    <>
+      {
+        //This Will Not show Navbar at payment page as we have sidebar on payment page
+        !token ? <Navbar /> : <></>
       }
       <Routes>
         <Route path="/" element={<Home />} />
@@ -65,13 +62,11 @@ function App() {
         <Route path="/patronHome" element={<PatronHome />} />
       </Routes>
       {
-        //This Will Not show Navbar at payment page as we have sidebar on payment page 
-        !token &&
-        <Footer />
+        //This Will Not show Navbar at payment page as we have sidebar on payment page
+        !token && <Footer />
       }
     </>
   );
 }
 
 export default App;
-
